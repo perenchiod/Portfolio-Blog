@@ -10,8 +10,8 @@
 	@section('header')
     <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="portfolio">Portfolio</a></li>
-            <li><a href="resume">Resume</a></li>
+            <li class="active"><a href="{{{ action('HomeController@linkPortfolio') }}}">Portfolio</a></li>
+            <li><a href="{{{ action('HomeController@linkResume') }}}">Resume</a></li>
             <li><a href="contact">Contact</a></li>
         </ul>
     </div>

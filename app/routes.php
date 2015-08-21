@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::resource('posts', 'PostsController');
+
+Route::get('/sayhello', 'HomeController@sayHello');
+Route::get('/resume', 'HomeController@linkResume');
+Route::get('/portfolio', 'HomeController@linkPortfolio');
+Route::get('/contact', 'HomeController@linkContact');
+
+Route::get('/', 'HomeController@showWelcome');
 
 Route::get('/name/{name?}', function($name = 'world')
 {
@@ -24,16 +28,6 @@ Route::get('/name/{name?}', function($name = 'world')
 })
 ->where('name', '[A-z0-9]+');
 
-Route::get('/resume' , function()
-{
-	return View::make('resume');
-});
-
-Route::get('/portfolio' , function()
-{
-	return View::make('portfolio');
-});
-
 Route::get('/rolldice/{guess?}' , function ($guess)
 {
 	$randomRoll = floor(rand(1,6));
@@ -41,9 +35,4 @@ Route::get('/rolldice/{guess?}' , function ($guess)
 	$data = array('guess' => $guess, 
 				  'roll' => $randomRoll);
 	return View::make('rollDice')->with($data);
-});
-
-Route::get('contact' , function()
-{
-	return View::make('contact');
 });
