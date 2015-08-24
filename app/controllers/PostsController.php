@@ -9,7 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(2);
+		$posts = Post::paginate(5);
 		return View::make('posts.index')->with('posts' , $posts);
 	}
 
@@ -58,7 +58,7 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
-		return View::make('posts/show')->with('posted' , $post);
+		return View::make('posts/show')->with('post' , $post);
 	}
 
 
@@ -71,7 +71,7 @@ class PostsController extends \BaseController {
 	public function edit($id)
 	{
 		$post = Post::find($id);
-		return View::make('posts/show')->with('posts' , $post);
+		return View::make("posts/edit")->with('post' , $post);
 	}
 
 
@@ -83,12 +83,18 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$post = Post::find($id);
-		$post->title = Input::get('title');
-		$post->body = Input::get('body');
-		$post->save();
+		$validator = Validator::make(Input::all(), Post::$rules);
 		
-		return Redirect::action('PostsController@index' , array($id));
+		if ($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		} else {
+			$post = new Post();
+			$post->title = Input::get('title');
+			$post->body = Input::get('body');
+			$post->save();
+
+			return View::make('posts/show')->with('post' , $post);
+		}
 	}
 
 
