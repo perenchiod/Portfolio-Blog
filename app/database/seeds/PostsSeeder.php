@@ -10,8 +10,9 @@
 
 			for($i=0; $i<30; $i++) {
 				$post = new Post();
-				$post->title = $faker->catchPhrase;
+				$post->title = $faker->catchPhrase . " " . $faker->catchPhrase;
 				$post->body = $faker->bs;
+				$post->user_id = User::all()->random(1)->id;
 				$post->save();
 			}
 

@@ -1,3 +1,14 @@
 body {
-	background-color: blue;
+	color: rgba(255, 0, 0, 0.45);
+}
+a {
+	color: rgb(20, 50, 0);
+	font-size: 20px;
+	font-family: 'Dosis', sans-serif;
+}
+h1 {
+	color: blue;
+}
+h3 {
+	color: black;
 }

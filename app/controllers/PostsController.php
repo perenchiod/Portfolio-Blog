@@ -9,8 +9,9 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(5);
-		return View::make('posts.index')->with('posts' , $posts);
+		$posts = Post::with('user')->paginate(5);
+		
+		return View::make('posts/index')->with(array('posts' => $posts));
 	}
 
 
@@ -22,6 +23,7 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
+		Log::info('This is some useful information.');
 		return View::make('posts/create');
 	}
 
@@ -36,14 +38,17 @@ class PostsController extends \BaseController {
 		$validator = Validator::make(Input::all(), Post::$rules);
 		
 		if ($validator->fails()) {
+			Session::flash('errorMessage' , 'Something went wrong here!');
 			return Redirect::back()->withErrors($validator)->withInput();
 		} else {
 			$post = new Post();
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
+			$post->user_id = Auth::id();
 			$post->save();
 
-			$posts = Post::all();
+			$posts = Post::paginate(5);
+			Session::flash('goodMessage' , 'All went right here!');
 			return View::make('posts/index')->with('posts' , $posts);
 		}
 	}
@@ -58,7 +63,12 @@ class PostsController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::find($id);
-		return View::make('posts/show')->with('post' , $post);
+		if(!$post) {
+			Session::flash('errorMessage' , "Blog post was not found");
+			App::abort(404);
+		} 
+
+		return View::make('posts.show')->with(array('post' => $post));
 	}
 
 
