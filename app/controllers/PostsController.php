@@ -2,6 +2,12 @@
 
 class PostsController extends \BaseController {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->beforeFilter('auth' , array('except' => array('index' , 'show')));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,10 +15,20 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::with('user')->paginate(5);
+		$query = Post::with('user');
 		
-		return View::make('posts/index')->with(array('posts' => $posts));
-	}
+		if (Input::has('search')) {
+			$search = Input::get('search');
+			$query->where('title' , 'like' , '%' ."$search" . '%')
+				->orWhereHas('user' , function($q) use ($search) {
+				$q->where('first_name' , 'like' , "%" . "$search" . "%");
+			})->orWhereHas('user' , function($q) use ($search) {
+				$q->where('last_name' , 'like' , "%" . "$search" . "%");
+			});
+        }
+        $posts = $query->orderBy('created_at', 'desc')->paginate(5);
+        return View::make('posts.index')->with('posts', $posts);
+    }
 
 
 	/**
@@ -62,7 +78,7 @@ class PostsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$post = Post::find($id);
+		$post = Post::with('user')->find($id);
 		if(!$post) {
 			Session::flash('errorMessage' , "Blog post was not found");
 			App::abort(404);

@@ -8,27 +8,7 @@
 </head>
 
 <body>
-    @section('header')
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <div class="nav-collapse collapse" style="height: 0px;">
-                    <ul class="nav pull-right">
-                        <li><a class="scroll-link" href="#row1">Portfolio</a></li>
-                        <li><a class="scroll-link" href="#row2">Resume</a></li>
-                        <li><a class="scroll-link" href="#row3">Contact</a></li>
-                        <li><a href="shortcodes.html">Shortcodes</a></li>
-                   </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    @stop
+
     @section('content')
     <!--Junmbotron heading-->
     <section id="one" class="portfolio">

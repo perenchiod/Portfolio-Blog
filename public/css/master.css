@@ -1,5 +1,6 @@
 body {
 	color: rgba(255, 0, 0, 0.45);
+	background-color: rgba(30, 30, 30, .05);
 }
 a {
 	color: rgb(20, 50, 0);
@@ -7,8 +8,50 @@ a {
 	font-family: 'Dosis', sans-serif;
 }
 h1 {
-	color: blue;
+	font-family: 'Alegreya', serif;
+	font-size: 39px;
 }
+
+.blogH1 {
+	text-align: center;
+	background-color: rgba(164, 235, 203 , .3);
+}
+
 h3 {
 	color: black;
+}
+
+#failedLogin {
+	font-size: 23px;
+	color: black;
+}
+
+.input-append {
+	margin-top: 35px;
+}
+.btn-info {
+	right: 40px;
+}
+
+.table-responsive {
+	margin-top: 50px;
+}
+
+.pagination {
+	margin-left: 40px;
+}
+
+.left {
+	margin-left: 30%;
+}
+
+.carousel{
+    margin-top: 20px;
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+
+.item {
+	bottom: 100px;
 }

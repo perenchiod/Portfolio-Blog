@@ -1,29 +1,46 @@
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
 <html lang='en'>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link media="all" type="text/css" rel="stylesheet" href="http://blog.dev/css/master.css">
+	
 	<!-- Google fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
-
+	<link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+	
 	<title>Laravel Blog</title>
 </head>
+
 <body>
+	<span class="bg-danger" id="loggedOut">@if(Session::has('loggedOut')) {{{ Session::get('loggedOut') }}} @endif</span>
 	<div id = "body" class="shia-video">
 	<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="glyphicon glyphicon-list-alt" href="http://blog.dev/posts">
-      </a>
+      	<a class="glyphicon glyphicon-list-alt col-md-4" href="http://blog.dev/posts">Home</a>
+    	<a class="glyphicon glyphicon-education col-md-4" href="http://blog.dev/portfolio">Portfolio</a>
+      	@if(Auth::check())
+      		<a class="glyphicon glyphicon-knight col-md-4" href="http://blog.dev/logout">Logout</a class="glyphicon glyphicon-king">
+      	@else
+      		<a class="glyphicon glyphicon-king col-md-4" href="http://blog.dev/login">Login</a class="glyphicon glyphicon-king">
+      	@endif
+
+      	@if(Request::url() === 'http://blog.dev/posts')
+	      	{{ Form::open(array('action' => 'PostsController@index' , 'method' => 'GET')) }}		
+			    <div class="input-append">
+			        <input name="search" type="text" class="search-query mac-style col-md-9" placeholder="Search title or name">
+			        <button type="submit" class="btn btn-info glyphicon glyphicon-search"></button>
+			    </div>         
+			{{ Form::close() }}
+		@endif
     </div>
   </div>
-</nav>
 	
 	@yield('header')
 	@yield('content')

@@ -4,8 +4,10 @@
 	<p>Created on {{ $post->created_at->format('l, F jS Y @ h:i:s A') }}
 	<h1>{{{$post->title}}}</h1>
 	<h3>{{{$post->body}}}</h3>
-	<a href="{{{ action('PostsController@edit' , $post->id)}}}">Edit post</a>
-	<button id="deleteButton">Delete post</button>
+	@if(Auth::user()->username  == $post->user->username)
+		<a href="{{{ action('PostsController@edit' , $post->id)}}}">Edit post</a>
+		<button id="deleteButton">Delete post</button>
+	@endif
 	
 	{{ Form::open(array('action' =>array('PostsController@destroy', $post->id), 'method' => 'DELETE' , 'id' => 'formDelete')) }}
 	{{ Form::close() }}
