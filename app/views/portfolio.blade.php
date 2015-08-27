@@ -1,14 +1,10 @@
 <!-- Still a work in progress, will be adding styles and project info when accquired -->
 @extends('layouts.master')
-
 <html>
 <head>
-
     <title>Dylan's Portfolio</title>
 </head>
-
-<body>
-
+<body>  
     @section('content')
     <!--Junmbotron heading-->
     <section id="one" class="portfolio">
@@ -80,7 +76,7 @@
             <a class="list-group-item inactive-link" href="#">
                 <h3 class="list-group-item-heading">About me</h3>
             </a>
-            <p class="container">
+            <p class="container" id="aboutMePortfolio">
                 I'm currently a student of <a href="http://codeup.com" target="_blank">CodeUp</a> going through their 
                 Full-Stack Bootcamp. I'm interested in learning as much as I can about web development to be a proficient 
                 coder in both front and backend developing.

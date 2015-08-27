@@ -117,6 +117,7 @@ class PostsController extends \BaseController {
 			$post = new Post();
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
+			$post->user_id = Auth::id();
 			$post->save();
 
 			return View::make('posts/show')->with('post' , $post);

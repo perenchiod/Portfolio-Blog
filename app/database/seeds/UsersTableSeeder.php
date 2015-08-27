@@ -17,6 +17,7 @@
 			$user->email = $_ENV['USER_EMAIL'];
 			$user->username = $_ENV['USER_USERNAME'];
 			$user->password = $_ENV['USER_PASSWORD'];
+			$user->user_role = "admin";
 			$user->save();
 		}
 

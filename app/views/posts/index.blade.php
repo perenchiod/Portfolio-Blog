@@ -2,32 +2,24 @@
 
 @section('content')
 
-<h1 class="blogH1">Blog posts</h1>
 <section id="main-slider" class="carousel">
-        <div class="carousel-inner">
-            <div class="item">
-            	<img src="/img/nice-image.jpg" alt="http://placehold.it/1200x480" />
-                <div class="container">
-                    <div class="carousel-content">
-                        <h1>Welcome to the Blog!</h1>
-                        <p class="lead">Hope you enjoy your stay ...<br>Kappa</p>
-                    </div>
+        <div class="item active">
+        	<img src="/img/nice-image.jpg" alt="http://placehold.it/1200x480" />
+            <div class="container">
+                <div class="carousel-content">
+                    <h1>You can do posts here and well that's about it!</h1>
+                    <p class="lead">But hey, if you like blogs then you're in luck!</p>
                 </div>
-            </div><!--/.item-->
-            <div class="item active">
-            	<img src="/img/nice-image.jpg" alt="http://placehold.it/1200x480" />
-                <div class="container">
-                    <div class="carousel-content">
-                        <h1>You can do posts here and well that's about it!</h1>
-                        <p class="lead">But hey, if you like blogs then you're in luck!</p>
-                    </div>
-                </div>
-            </div><!--/.item-->
-        </div><!--/.carousel-inner-->
-        <a class="left glyphicon glyphicon-chevron-left" href="#main-slider" data-slide="prev"><i class="icon-angle-left"></i></a>
-        <a class="right glyphicon glyphicon-chevron-right" href="#main-slider" data-slide="next"><i class="icon-angle-right"></i></a>
+            </div>
+    </div><!--/.carousel-inner--> 
 </section>
-
+{{ Form::open(array('action' => 'PostsController@index' , 'method' => 'GET')) }}		
+    <span class="input-append">
+        <input name="search" type="text" class="search-query mac-style col-md-6" placeholder="Search title or name">
+        <button type="submit" class="btn btn-info glyphicon glyphicon-search"></button>
+    </span>         
+{{ Form::close() }}
+<div id="pagination"> {{ $posts->appends(array('search' => Input::get('search')))->links() }} </div>
 <p class="bg-success">@if(Session::has('goodMessage')) {{{ Session::get('goodMessage') }}} @endif</p>
 <div class="table-responsive">
 	<table class="table table-striped">
@@ -50,6 +42,4 @@
 		</tbody>
 	</table>
 </div>
-<div class="pagination"> {{ $posts->appends(array('search' => Input::get('search')))->links() }} </div>
-
 @stop

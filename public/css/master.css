@@ -1,9 +1,10 @@
 body {
-	color: rgba(255, 0, 0, 0.45);
-	background-color: rgba(30, 30, 30, .05);
+	color: rgba(255, 50, 0, 0.90);
+	font-size: 21px;
+	background-image: url("http://maccg.com/wp-content/uploads/2013/08/css-quilt.png");
 }
 a {
-	color: rgb(20, 50, 0);
+	color: rgba(130,130,250,.9);
 	font-size: 20px;
 	font-family: 'Dosis', sans-serif;
 }
@@ -12,9 +13,11 @@ h1 {
 	font-size: 39px;
 }
 
-.blogH1 {
+.blogHeader {
 	text-align: center;
-	background-color: rgba(164, 235, 203 , .3);
+	font-size: 48px;
+	color: white;
+	margin-left: 200px;
 }
 
 h3 {
@@ -28,17 +31,23 @@ h3 {
 
 .input-append {
 	margin-top: 35px;
+	clear: both;
 }
 .btn-info {
 	right: 40px;
 }
 
 .table-responsive {
-	margin-top: 50px;
+	background-color:rgba(181,181,181,.6);
+	clear: both;
 }
 
-.pagination {
+#pagination{
 	margin-left: 40px;
+	color: black;
+	position: absolute;
+	right: 30px;
+	top: 535px;
 }
 
 .left {
@@ -48,10 +57,32 @@ h3 {
 .carousel{
     margin-top: 20px;
 }
-.carousel .item img{
-    margin: 0 auto; /* Align slide image horizontally center */
-}
 
 .item {
 	bottom: 100px;
+}
+.carousel-content {
+	color: white;
+	bottom: 10px;
+	left: 10px;
+	position: absolute;
+}
+
+#loginForm {
+	position: absolute;
+	margin: -300px 0 0 -300px;
+	left: 50%;
+	top: 50%;
+}
+
+#aboutMePortfolio {
+	color:rgba(250,250,250, .9);	
+}
+
+.glyphicon {
+	color: rgba(60,130,200,.9);
+}
+
+.tableTitle {
+	color: white;
 }
