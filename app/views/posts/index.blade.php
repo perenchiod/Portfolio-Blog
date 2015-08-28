@@ -25,7 +25,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
-				<th>Title</th>
+				<th>Title (Links)</th>
 				<th>Body</th>
 				<th>Name</th>
 			</tr>

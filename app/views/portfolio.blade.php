@@ -13,14 +13,13 @@
                 <h1>Dylan Perenchio's Portfolio!</h1>
                 <p>This is my own portfolio for all the work I have completed.</p>
             </div>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Herey</a>
         </div>
 
         <!--Horizontal paragraph-->
 
         <div class="bs-example container" data-example-id="horizontal-dl">
             <dl class="dl-horizontal">  
-                <dt>Projects completed: </dt>
+                <dt>Projects:</dt>
                <dd>My project comleted are listed here with links to their <a href="https://github.com/perenchiod" target="_blank">Github</a></dd>
                 <dt>Learned:</dt>
                 <dd>Html, CSS, Javascript, PHP, MySQL</dd>
@@ -37,8 +36,8 @@
                     <div class="thumbnail">
                         <img data-src="holder.js/100%x200" alt="" src="">
                         <div class="caption">
-                            <h3 id="thumbnail-label">Project 1<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
-                            <p>Github: <a href="http://github.com/" target="_blank">Github link to project 1</a> </p>
+                            <h3 id="thumbnail-label">Simple Simon game<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+                            <p>Github: <a href="https://github.com/perenchiod/Simple-Simon" target="_blank">Github link to Simple Simon</a> </p>
                         </div>
                     </div>
                 </div>
@@ -48,8 +47,8 @@
                     <div class="thumbnail">
                         <img data-src="holder.js/100%x200" alt="" src="">
                         <div class="caption">
-                            <h3 id="thumbnail-label">Project 2<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
-                            <p>Github: <a href="http://github.com/" target="_blank">Github link to project 2</a> </p>
+                            <h3 id="thumbnail-label">Whach-A-Mole<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+                            <p>Github: <a href="https://github.com/perenchiod/Whack-a-Mole" target="_blank">Github link to Whack-A-Mole</a> </p>
                         </div>
                     </div>
                 </div>

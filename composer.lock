@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "df4136f348ca23aa0ffbb8310932d1c8",
+    "hash": "902aafa3ad9e3bd20cb5b4d8378061d3",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -88,6 +88,54 @@
             ],
             "description": "A tiny, but robust REPL (Read-Evaluate-Print-Loop) for PHP.",
             "time": "2015-03-01 08:05:19"
+        },
+        {
+            "name": "dmyers/laravel-storage",
+            "version": "v1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmyers/laravel-storage.git",
+                "reference": "c239b7da06d51a4fa5e011f025ae1591b3c25c86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmyers/laravel-storage/zipball/c239b7da06d51a4fa5e011f025ae1591b3c25c86",
+                "reference": "c239b7da06d51a4fa5e011f025ae1591b3c25c86",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.x",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Dmyers\\Storage": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Derek Myers",
+                    "email": "arcticpro@gmail.com"
+                }
+            ],
+            "description": "A simple storage filesystem package for Laravel 4.",
+            "keywords": [
+                "filesystem",
+                "laravel",
+                "storage"
+            ],
+            "time": "2014-09-05 23:32:11"
         },
         {
             "name": "filp/whoops",

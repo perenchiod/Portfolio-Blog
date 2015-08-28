@@ -26,7 +26,8 @@
 			      	<a class="glyphicon glyphicon-list-alt col-md-4" href="http://blog.dev/posts">Home</a>
 			    	<a class="glyphicon glyphicon-education col-md-4" href="http://blog.dev/portfolio">Portfolio</a>
 			      	@if(Auth::check())
-			      		<a class="glyphicon glyphicon-knight col-md-4" href="http://blog.dev/logout">Logout</a class="glyphicon glyphicon-king">
+				      	<a class="glyphicon glyphicon-upload col-md-4" href="http://blog.dev/posts/create">Create</a>
+			      		<a class="glyphicon glyphicon-knight" href="http://blog.dev/logout">Logout</a class="glyphicon glyphicon-king">
 			      	@else
 			      		<a class="glyphicon glyphicon-king col-md-4" href="http://blog.dev/login">Login</a class="glyphicon glyphicon-king">
 			      	@endif
@@ -46,6 +47,7 @@
 				if (konamiValue == konamiArray[incKonami++]) {
 					if(incKonami == konamiArray.length) {
 						$(".shia-video").append("<iframe width='1' height='1' src='https://www.youtube.com/embed/o0u4M6vppCI?rel=0&autoplay=1&amp;loop=1&amp;' frameborder='0' allowfullscreen></iframe>");
+						$('body').css("cursor" , "url(/img/shia-cursor.png), auto")
 					}
 				} else {
 					incKonami = 0;

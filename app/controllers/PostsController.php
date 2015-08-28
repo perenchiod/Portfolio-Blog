@@ -63,6 +63,11 @@ class PostsController extends \BaseController {
 			$post->user_id = Auth::id();
 			$post->save();
 
+			if (Input::hasFile('picture')) {
+				if (Input::file('picture')->isValid()) {
+					Storage::upload(Input::file('picture'), "$post->picture" . "jpg");
+		        } 
+		    }
 			$posts = Post::paginate(5);
 			Session::flash('goodMessage' , 'All went right here!');
 			return View::make('posts/index')->with('posts' , $posts);
@@ -83,7 +88,6 @@ class PostsController extends \BaseController {
 			Session::flash('errorMessage' , "Blog post was not found");
 			App::abort(404);
 		} 
-
 		return View::make('posts.show')->with(array('post' => $post));
 	}
 

@@ -4,7 +4,7 @@ body {
 	background-image: url("http://maccg.com/wp-content/uploads/2013/08/css-quilt.png");
 }
 a {
-	color: rgba(130,130,250,.9);
+	color: black;
 	font-size: 20px;
 	font-family: 'Dosis', sans-serif;
 }
@@ -85,4 +85,18 @@ h3 {
 
 .tableTitle {
 	color: white;
+}
+
+th {
+	font-size: 28px;
+	color: white;
+}
+
+.showDiv {
+	background-color: white;
+}
+
+.glyphicon-knight {
+	float: right;
+	position: absolute;
 }
