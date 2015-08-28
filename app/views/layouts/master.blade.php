@@ -23,13 +23,13 @@
 		<nav class="navbar navbar-default">
   			<div class="container-fluid">
     			<div class="navbar-header">
-			      	<a class="glyphicon glyphicon-list-alt col-md-4" href="http://blog.dev/posts">Home</a>
-			    	<a class="glyphicon glyphicon-education col-md-4" href="http://blog.dev/portfolio">Portfolio</a>
+			      	<a class="glyphicon glyphicon-list-alt col-md-4" href="/posts">Home</a>
+			    	<a class="glyphicon glyphicon-education col-md-4" href="/portfolio">Portfolio</a>
 			      	@if(Auth::check())
-				      	<a class="glyphicon glyphicon-upload col-md-4" href="http://blog.dev/posts/create">Create</a>
-			      		<a class="glyphicon glyphicon-knight" href="http://blog.dev/logout">Logout</a class="glyphicon glyphicon-king">
+				      	<a class="glyphicon glyphicon-upload col-md-4" href="/posts/create">Create</a>
+			      		<a class="glyphicon glyphicon-knight" href="/logout">Logout</a class="glyphicon glyphicon-king">
 			      	@else
-			      		<a class="glyphicon glyphicon-king col-md-4" href="http://blog.dev/login">Login</a class="glyphicon glyphicon-king">
+			      		<a class="glyphicon glyphicon-king col-md-4" href=" /login">Login</a class="glyphicon glyphicon-king">
 			      	@endif
 			    </div>
 			</div>
