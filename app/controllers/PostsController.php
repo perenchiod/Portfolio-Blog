@@ -61,13 +61,14 @@ class PostsController extends \BaseController {
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
 			$post->user_id = Auth::id();
-			$post->save();
 
 			if (Input::hasFile('picture')) {
 				if (Input::file('picture')->isValid()) {
 					Storage::upload(Input::file('picture'), "$post->picture" . "jpg");
 		        } 
+		        $post->picture = Input::file('picture');
 		    }
+			$post->save();
 			$posts = Post::paginate(5);
 			Session::flash('goodMessage' , 'All went right here!');
 			return View::make('posts/index')->with('posts' , $posts);
