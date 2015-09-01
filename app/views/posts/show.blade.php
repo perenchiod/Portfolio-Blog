@@ -3,24 +3,27 @@
 @section('content')
 	<div class="showDiv">
 		<p class="glyphicon glyphicon-time">Created {{ $post->created_at->format('l, F jS Y @ h:i:s A') }} </p> <br>
+				<?php $changedURL = str_replace("," , "" , $post->tags); $changedURL = str_replace(" " , "+" , $changedURL);     ?>
 			@if(strstr($post->tags, ","))
-				<a href="{{{ action('HomeController@displayTag' , str_replace("," , "&" , $post->tags))}}}"> {{{ str_replace("," , " " , $post->tags) }}} </a> </h4>
+				<a href="{{{ action('HomeController@displayTag' , $changedURL)  }}}"> {{{ str_replace("," , " " , $post->tags) }}} </a> </h4>
 			@else 
 				<h4> Tags: <a href= "{{{ action('HomeController@displayTag' , $post->tags) }}}">{{{$post->tags}}} </a> </h4>
 			@endif
 			
 		<h1>{{{$post->title}}}</h1>
 		<h2>{{{$post->body}}}</h2>
-		@if(Auth::check())
-			@if(Auth::user()->user_role == 'admin')
-				{{ Form::open(array('action' =>array('PostsController@destroy', $post->id), 'method' => 'DELETE' , 'id' => 'formDelete')) }}
-					<button id="deleteButton">Delete post</button>
-				{{ Form::close() }}
-				@if((Auth::user()->username  == $post->user->username))
-					<a href="{{{ action('PostsController@edit' , $post->id)}}}">Edit post</a>
+			@if(Auth::check())
+				@if(Auth::user()->user_role == 'admin')
+					<div class="showButtons">
+					{{ Form::open(array('action' =>array('PostsController@destroy', $post->id), 'method' => 'DELETE' , 'id' => 'formDelete')) }}
+						<button class="deleteButton col-md-4">Delete post</button>
+					{{ Form::close() }}
+					@if((Auth::user()->username  == $post->user->username))
+						<button class="editID col-md-4" id="edit" href="{{{ action('PostsController@edit' , $post->id)}}}">Edit post</button>
+					</div>
+					@endif
 				@endif
 			@endif
-		@endif
 	</div>
 
 @stop

@@ -17,9 +17,18 @@ class HomeController extends BaseController {
     public function displayTag($tag)
     {
         $query = Post::with('user');
+        
+        if(strpos($tag, "+")) {
+            $firstKey = substr($tag, 0 , strpos($tag, "+"));
+            $query->where('tags' , '=' , "$firstKey");
+            $query->orWhere('tags' , 'like' , '%'."$firstKey".'%');
 
-        $query->where('tags' , '=' , "$tag");
 
+        }else {
+            $query->where('tags' , '=' , "$tag");
+            $query->orWhere('tags' , 'like' , '%'."$tag".'%');
+        }
+        
         $showQuery = $query->orderBy('created_at', 'desc')->paginate(5);
         return View::make('/tag')->with('tags' , $showQuery);
     }
@@ -74,7 +83,7 @@ class HomeController extends BaseController {
 
     public function linkWhackaMole() 
     {
-        return View::make('whackamole');
+        return View::make('/whackaMole');
     }
 
 

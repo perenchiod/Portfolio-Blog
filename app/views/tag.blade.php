@@ -2,7 +2,7 @@
 
 @section('content')
 	
-	<h1>Tag- {{{$tags}}} </h1>
+	<h1>Tag-  </h1>
 	
 
 	<div class="table-responsive">
@@ -25,5 +25,7 @@
 		</tbody>
 	</table>
 </div>
+
+<div id="pagination"> {{ $tags->appends(array('search' => Input::get('search')))->links() }} </div>
 
 @stop

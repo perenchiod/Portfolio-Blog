@@ -21,7 +21,7 @@ Route::get('/tag/{tag?}' , 'HomeController@displayTag');
 Route::get('/resume', 'HomeController@linkResume');
 Route::get('/portfolio', 'HomeController@linkPortfolio');
 Route::get('/contact', 'HomeController@linkContact');
-Route::get('whackamole' , 'HomeController@linkWhackaMole');
+Route::get('/whackamole' , 'HomeController@linkWhackaMole');
 
 Route::get('/', 'HomeController@showWelcome');
 

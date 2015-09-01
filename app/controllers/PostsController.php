@@ -69,7 +69,7 @@ class PostsController extends \BaseController {
 		    }
 
 		    if(Input::has('tags')) {
-		    	$post->tags = json_encode(Input::get('tags'));
+		    	$post->tags = implode(',', Input::get('tags'));
 		    }
 			$post->save();
 			$posts = Post::paginate(5);

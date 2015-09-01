@@ -96,7 +96,20 @@ th {
 	background-color: white;
 }
 
+#edit {
+	float: right;
+}
+
 .glyphicon-knight {
 	float: right;
 	position: absolute;
+}
+
+.editID {
+	font-size: 25px;
+	float: left;
+}
+
+.deleteButton {
+	clear: both;
 }
