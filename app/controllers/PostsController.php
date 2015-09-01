@@ -16,7 +16,6 @@ class PostsController extends \BaseController {
 	public function index()
 	{
 		$query = Post::with('user');
-		
 		if (Input::has('search')) {
 			$search = Input::get('search');
 			$query->where('title' , 'like' , '%' ."$search" . '%')
@@ -67,6 +66,10 @@ class PostsController extends \BaseController {
 					Storage::upload(Input::file('picture'), "$post->picture" . "jpg");
 		        } 
 		        $post->picture = Input::file('picture');
+		    }
+
+		    if(Input::has('tags')) {
+		    	$post->tags = json_encode(Input::get('tags'));
 		    }
 			$post->save();
 			$posts = Post::paginate(5);
@@ -128,7 +131,6 @@ class PostsController extends \BaseController {
 			return View::make('posts/show')->with('post' , $post);
 		}
 	}
-
 
 	/**
 	 * Remove the specified resource from storage.

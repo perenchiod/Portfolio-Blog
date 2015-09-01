@@ -37,8 +37,7 @@
 				<td>{{{ Str::words($post->body , 20) }}}</td>
 				<td>{{ $post->user->first_name }} {{ $post->user->last_name }}</td>
 			</tr>
-			@endforeach
-				
+			@endforeach	
 		</tbody>
 	</table>
 </div>

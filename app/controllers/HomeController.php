@@ -14,6 +14,16 @@ class HomeController extends BaseController {
 	|
 	*/
 	
+    public function displayTag($tag)
+    {
+        $query = Post::with('user');
+
+        $query->where('tags' , '=' , "$tag");
+
+        $showQuery = $query->orderBy('created_at', 'desc')->paginate(5);
+        return View::make('/tag')->with('tags' , $showQuery);
+    }
+
     public function showLogin() 
     {
         return View::make('login');
@@ -41,9 +51,9 @@ class HomeController extends BaseController {
     }
 
 
-	public function showWelcome($name = 'bill')
+	public function showWelcome()
     {
-        return View::make('portfolio')->with($name);
+        return View::make('portfolio');
 
     }
 

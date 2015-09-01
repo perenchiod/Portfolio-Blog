@@ -16,8 +16,8 @@ Route::resource('posts', 'PostsController');
 Route::get('/login' , 'HomeController@showLogin');
 Route::post('/login' , 'HomeController@doLogin');
 Route::get('/logout' , 'HomeController@doLogout');
+Route::get('/tag/{tag?}' , 'HomeController@displayTag');
 
-Route::get('/sayhello', 'HomeController@sayHello');
 Route::get('/resume', 'HomeController@linkResume');
 Route::get('/portfolio', 'HomeController@linkPortfolio');
 Route::get('/contact', 'HomeController@linkContact');
