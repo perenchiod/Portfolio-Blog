@@ -1,0 +1,31 @@
+#squareBody {
+	border: dotted red 2px;
+	width: 590px;
+	height: 590px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #1D232A;
+}
+#square0, #square1, #square2, #square3 {
+	width: 250px;
+	height: 250px;
+	margin: 20px;
+	float: left;
+	opacity: .5;
+}
+#square0 {
+	background-color: #66FF33;
+}
+#square1 {
+	background-color: red;
+}
+#square2 {
+	background-color: #75FFFF;
+}
+#square3 {
+	background-color: yellow;
+}
+#startGame {
+	margin-left: 100px;
+}
+

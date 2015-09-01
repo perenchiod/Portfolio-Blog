@@ -4,6 +4,24 @@
 	<link rel="stylesheet" href="http://blog.dev/css/whack-a-mole.css" type="text/css"/>
 </head>
 <body>
+	<span class="bg-danger" id="loggedOut">@if(Session::has('loggedOut')) {{{ Session::get('loggedOut') }}} @endif</span>
+	<div id = "body2" class="shia-video">
+		<nav class="navbar navbar-default">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+			      	<a class="glyphicon glyphicon-list-alt col-md-4" href="/posts">Home</a>
+			    	<a class="glyphicon glyphicon-education col-md-4" href="/portfolio">Portfolio</a>
+			      	@if(Auth::check())
+				      	<a class="glyphicon glyphicon-upload col-md-4" href="/posts/create">Create</a>
+			      		<a class="glyphicon glyphicon-knight" href="/logout">Logout</a class="glyphicon glyphicon-king">
+			      	@else
+			      		<a class="glyphicon glyphicon-king col-md-4" href="/login">Login</a class="glyphicon glyphicon-king">
+			      	@endif
+			    </div>
+			</div>
+		</nav>
+	</div>
+
 	<button id = "startGame" type="button" class="btn btn-primary btn-lg btn-block">Start Game</button>
 	<h1>Whack-A-<strong>Shia Labeouf</strong></h1>
 	<h3 class="timer">Timer: </h3>

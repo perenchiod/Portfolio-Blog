@@ -36,7 +36,7 @@
                     <div class="thumbnail">
                         <img data-src="holder.js/100%x200" alt="" src="">
                         <div class="caption">
-                            <h3 id="thumbnail-label">Simple Simon game<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+                            <a href="/simplesimon" id="thumbnail-label">Simple Simon game<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></a> <small>(link)</small>
                             <p>Github: <a href="https://github.com/perenchiod/Simple-Simon" target="_blank">Github link to Simple Simon</a> </p>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="thumbnail">
                         <img data-src="holder.js/100%x200" alt="" src="">
                         <div class="caption">
-                            <h3 id="thumbnail-label">Whach-A-Mole<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3>
+                            <a href="/whackamole" id="thumbnail-label">Whach-A-Mole<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></a>  <small>(link)</small>
                             <p>Github: <a href="https://github.com/perenchiod/Whack-a-Mole" target="_blank">Github link to Whack-A-Mole</a> </p>
                         </div>
                     </div>

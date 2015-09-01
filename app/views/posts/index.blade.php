@@ -3,15 +3,15 @@
 @section('content')
 
 <section id="main-slider" class="carousel">
-        <div class="item active">
-        	<img src="/img/nice-image.jpg" alt="http://placehold.it/1200x480" />
-            <div class="container">
-                <div class="carousel-content">
-                    <h1>You can do posts here and well that's about it!</h1>
-                    <p class="lead">But hey, if you like blogs then you're in luck!</p>
-                </div>
+    <div class="item active">
+    	<img src="/img/nice-image.jpg" alt="http://placehold.it/1200x480" />
+        <div class="container">
+            <div class="carousel-content">
+                <h1>You can do posts here and well that's about it!</h1>
+                <p class="lead">But hey, if you like blogs then you're in luck!</p>
             </div>
-    </div><!--/.carousel-inner--> 
+        </div>
+	</div>
 </section>
 {{ Form::open(array('action' => 'PostsController@index' , 'method' => 'GET')) }}		
     <span class="input-append">
@@ -27,6 +27,7 @@
 			<tr>
 				<th>Title (Links)</th>
 				<th>Body</th>
+				<th>Tags</th>
 				<th>Name</th>
 			</tr>
 		</thead>
@@ -35,6 +36,7 @@
 			<tr>
 				<td><a href="{{{ action('PostsController@show' , $post->id)}}}">{{{ $post->title }}}</a></td>
 				<td>{{{ Str::words($post->body , 20) }}}</td>
+				<td>{{{ $post->tags }}}</td>
 				<td>{{ $post->user->first_name }} {{ $post->user->last_name }}</td>
 			</tr>
 			@endforeach	

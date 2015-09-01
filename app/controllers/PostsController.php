@@ -122,9 +122,12 @@ class PostsController extends \BaseController {
 		if ($validator->fails()) {
 			return Redirect::back()->withErrors($validator)->withInput();
 		} else {
-			$post = new Post();
+			$post = Post::find($id);
 			$post->title = Input::get('title');
 			$post->body = Input::get('body');
+			if(Input::has('tags')) {
+				$post->tags = Input::get('tags');
+			}
 			$post->user_id = Auth::id();
 			$post->save();
 

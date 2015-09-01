@@ -5,9 +5,9 @@
 		<p class="glyphicon glyphicon-time">Created {{ $post->created_at->format('l, F jS Y @ h:i:s A') }} </p> <br>
 				<?php $changedURL = str_replace("," , "" , $post->tags); $changedURL = str_replace(" " , "+" , $changedURL);     ?>
 			@if(strstr($post->tags, ","))
-				<a href="{{{ action('HomeController@displayTag' , $changedURL)  }}}"> {{{ str_replace("," , " " , $post->tags) }}} </a> </h4>
+				Tags: <a href="{{{ action('HomeController@displayTag' , $changedURL)  }}}"> {{{ str_replace("," , " " , $post->tags) }}} </a> </h4>
 			@else 
-				<h4> Tags: <a href= "{{{ action('HomeController@displayTag' , $post->tags) }}}">{{{$post->tags}}} </a> </h4>
+				<h4> Tag: <a href= "{{{ action('HomeController@displayTag' , $post->tags) }}}">{{{$post->tags}}} </a> </h4>
 			@endif
 			
 		<h1>{{{$post->title}}}</h1>
@@ -15,13 +15,13 @@
 			@if(Auth::check())
 				@if(Auth::user()->user_role == 'admin')
 					<div class="showButtons">
-					{{ Form::open(array('action' =>array('PostsController@destroy', $post->id), 'method' => 'DELETE' , 'id' => 'formDelete')) }}
-						<button class="deleteButton col-md-4">Delete post</button>
-					{{ Form::close() }}
-					@if((Auth::user()->username  == $post->user->username))
-						<button class="editID col-md-4" id="edit" href="{{{ action('PostsController@edit' , $post->id)}}}">Edit post</button>
+						<button id="delete" class="deleteButton col-md-4">Delete post</button>
+						{{ Form::open(array('action' =>array('PostsController@destroy', $post->id), 'method' => 'DELETE' , 'id' => 'formDelete')) }}
+						{{ Form::close() }}
+						@if((Auth::user()->username  == $post->user->username))
+							<a class="editID col-md-4" id="edit" href="{{{ action('PostsController@edit' , $post->id)}}}">Edit post</a>
+						@endif
 					</div>
-					@endif
 				@endif
 			@endif
 	</div>
@@ -29,15 +29,15 @@
 @stop
 
 @section('script')
-<script>
-	(function(){
-		"use strict";
-		$("#deleteButton").on("click" , function(){
-			var deleteMessage = confirm("Are you sure about that?");
-			if(deleteMessage) {
-				$("#formDelete").submit();
-			}
-		});
-	})();
-</script>
+	<script type="text/javascript">
+		(function (){
+			"use strict";
+			$('#delete').on('click', function(){
+				var onConfirm = confirm('Are you sure you want to delete this post?');
+				if (onConfirm) {
+					$('#formDelete').submit();
+				}
+			});
+		}) ();
+	</script>
 @stop

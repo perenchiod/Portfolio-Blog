@@ -3,7 +3,6 @@
 
 <html>
 <head>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <title>Dylan's resume</title>
 </head>
 <body>
