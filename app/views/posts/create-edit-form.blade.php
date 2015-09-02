@@ -6,7 +6,7 @@
 	 @if($errors->has('picture')) {{ $errors->first('picture') }} @endif
 	<input name="picture" id="focusedInput glyphicon glyphicon-picture" type="file" name="pictureUpload" placeholder="Upload photo" value="@if(isset($post->body)) {{$post->body}} @else {{{ Input::old('body') }}} @endif">
 	<h3>Tags <small>(limit 3)</small></h3>
-	<select name="tags" id="tagSelect" multiple="multiple">     	
+	<select name="tags[]" id="tagSelect" multiple="multiple">     	
 		<option value="funny">Funny</option>
 	    <option value="troll">Troll</option>
 	    <option value="sad">Sad</option>

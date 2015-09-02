@@ -5,7 +5,7 @@
 <html>
 <head>
 	<title>Simon Game</title>
-	<link media="all" type="text/css" rel="stylesheet" href="http://blog.dev/css/simon.css">
+	<link media="all" type="text/css" rel="stylesheet" href="http://dylanswonderland.com/css/simon.css">
 </head>
 <body>
 
