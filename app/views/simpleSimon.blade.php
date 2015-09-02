@@ -5,10 +5,10 @@
 <html>
 <head>
 	<title>Simon Game</title>
-	<link rel="stylesheet" type="text/css" href="http://blog.dev/css/simon.css">
+	<link media="all" type="text/css" rel="stylesheet" href="http://blog.dev/css/simon.css">
 </head>
 <body>
-	
+
 	<h1>Hard Simple Simon</h1>
 	<h4>(Only the latest square added to the game will be shown)</h4>
 	<div id="squareBody">
@@ -113,7 +113,5 @@
 </script>
 </body>
 </html>
-
-
 
 @stop
