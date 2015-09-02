@@ -113,3 +113,7 @@ th {
 .deleteButton {
 	clear: both;
 }
+#feelsBad {
+	float: right;
+	margin-right: 100px;
+}

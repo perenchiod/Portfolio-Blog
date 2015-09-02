@@ -51,19 +51,7 @@
                             <p>Github: <a href="https://github.com/perenchiod/Whack-a-Mole" target="_blank">Github link to Whack-A-Mole</a> </p>
                         </div>
                     </div>
-                </div>
-          
-                <!-- Project 3-->
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <img data-src="holder.js/100%x200" alt="" src="">
-                        <div class="caption">
-                            <h3 id="thumbnail-label">Project 3<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h3> 
-                            <p>Github: <a href="http://github.com/" target="_blank">Github link to project 3</a> </p>
-                        </div>
-                    </div>
-                </div>
-            
+                </div>                  
             </div>
         </div>
     </section>
