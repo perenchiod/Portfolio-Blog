@@ -23,6 +23,7 @@ Route::get('/portfolio', 'HomeController@linkPortfolio');
 Route::get('/contact', 'HomeController@linkContact');
 Route::get('/whackamole' , 'HomeController@linkWhackaMole');
 Route::get('/simplesimon' , 'HomeController@linksimpleSimon');
+Route::get('/help' , 'HomeController@helpPage');
 
 
 Route::get('/', 'HomeController@showWelcome');

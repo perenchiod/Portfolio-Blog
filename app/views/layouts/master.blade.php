@@ -11,7 +11,7 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	
-	<link media="all" type="text/css" rel="stylesheet" href="http://blog.dev/css/master.css">
+	<link media="all" type="text/css" rel="stylesheet" href="http://dylanswonderland.com/css/master.css">
 	<link rel="stylesheet" href="http://blog.dev/css/bootstrap-multiselect.css" type="text/css"/>
 	{{ HTML::script('js/bootstrap-multiselect.js') }}
 

@@ -86,9 +86,14 @@ class HomeController extends BaseController {
         return View::make('/whackaMole');
     }
 
-      public function linksimpleSimon() 
+    public function linksimpleSimon() 
     {
         return View::make('/simplesimon');
+    }
+
+    public function helpPage()
+    {
+        return View::make('/help');
     }
 
 
