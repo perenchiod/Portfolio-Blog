@@ -15,6 +15,12 @@
 	<link rel="stylesheet" href="http://blog.dev/css/bootstrap-multiselect.css" type="text/css"/>
 	{{ HTML::script('js/bootstrap-multiselect.js') }}
 
+	<!-- Including bower markdown info here -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/ace-builds/src-min/ace.js"></script>
+	<script src="bower_components/bootstrap-markdown-editor/dist/js/bootstrap-markdown-editor.js"></script>
+
 	
 	<!-- Google fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>

@@ -1,6 +1,7 @@
 @extends("layouts.master")
 
 @section('content')
+	<div id="myEditor"># Test</div>
 	<div class="showDiv">
 		<p class="glyphicon glyphicon-time">Created {{ $post->created_at->format('l, F jS Y @ h:i:s A') }} </p> <br>
 				<?php $changedURL = str_replace("," , "" , $post->tags); $changedURL = str_replace(" " , "+" , $changedURL);     ?>
@@ -32,12 +33,14 @@
 	<script type="text/javascript">
 		(function (){
 			"use strict";
+			
 			$('#delete').on('click', function(){
 				var onConfirm = confirm('Are you sure you want to delete this post?');
 				if (onConfirm) {
 					$('#formDelete').submit();
 				}
 			});
-		}) ();
+			$('#myEditor').markdownEditor();
+		})();
 	</script>
 @stop

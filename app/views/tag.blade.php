@@ -2,7 +2,12 @@
 
 @section('content')
 	
-	<h1>Tag-  </h1>
+	{{ Form::open(array('action' => 'PostsController@index' , 'method' => 'GET')) }}		
+	    <span class="input-append">
+	        <input name="search" type="text" class="search-query mac-style col-md-6" placeholder="Search title or name">
+	        <button type="submit" class="btn btn-info glyphicon glyphicon-search"></button>
+	    </span>         
+	{{ Form::close() }}
 	
 
 	<div class="table-responsive">

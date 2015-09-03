@@ -22,6 +22,8 @@ class PostsController extends \BaseController {
 				->orWhereHas('user' , function($q) use ($search) {
 				$q->where('first_name' , 'like' , "%" . "$search" . "%");
 			})->orWhereHas('user' , function($q) use ($search) {
+				$q->where('tags' , 'like' , "%" . "$search" . "%");
+			})->orWhereHas('user' , function($q) use ($search) {
 				$q->where('last_name' , 'like' , "%" . "$search" . "%");
 			});
         }
