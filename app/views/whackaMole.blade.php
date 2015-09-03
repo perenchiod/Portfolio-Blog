@@ -1,3 +1,7 @@
+@extends('layouts master')
+
+@section('content')
+
 <html>
 <head>
 	<title>Whack-A-Mole</title>
@@ -136,4 +140,6 @@
 	</script>
 </body>
 </html>
+
+@stop
 
