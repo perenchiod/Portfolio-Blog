@@ -1,11 +1,12 @@
-@extends('layouts master')
-
-@section('content')
-
 <html>
 <head>
 	<title>Whack-A-Mole</title>
 	<link rel="stylesheet" href="http://dylanswonderland.com/css/whack-a-mole.css" type="text/css"/>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<span class="bg-danger" id="loggedOut">@if(Session::has('loggedOut')) {{{ Session::get('loggedOut') }}} @endif</span>
@@ -42,8 +43,6 @@
 		<div class="squares" id="8"></div>
 	</div>
 	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script>
 	"use strict";
 		var holes = [0,1,2,3,4,5,6,7,8];
@@ -140,6 +139,3 @@
 	</script>
 </body>
 </html>
-
-@stop
-
