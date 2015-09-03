@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>Whack-A-Mole</title>
-	<link rel="stylesheet" href="http://blog.dev/css/whack-a-mole.css" type="text/css"/>
+	<link rel="stylesheet" href="http://dylanswonderland.com/css/whack-a-mole.css" type="text/css"/>
 </head>
 <body>
 	<span class="bg-danger" id="loggedOut">@if(Session::has('loggedOut')) {{{ Session::get('loggedOut') }}} @endif</span>
