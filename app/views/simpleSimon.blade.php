@@ -1,7 +1,3 @@
-@extends("layouts.master")
-
-@section("content")
-
 <html>
 <head>
 	<title>Simon Game</title>
@@ -110,5 +106,3 @@
 </script>
 </body>
 </html>
-
-@stop
