@@ -2,29 +2,30 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
+	 <!-- Add CSRF Token as a meta tag in your head -->
+    <meta name="csrf-token" content="{{{ csrf_token() }}}">
+
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
-	<link media="all" type="text/css" rel="stylesheet" href="http://dylanswonderland.com/css/master.css">
-	<link rel="stylesheet" href="http://blog.dev/css/bootstrap-multiselect.css" type="text/css"/>
 	{{ HTML::script('js/bootstrap-multiselect.js') }}
-
+	
+	<script src="/bower_components/angular/angular.min.js"></script>
+	
 	<!-- Including bower markdown info here -->
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="bower_components/ace-builds/src-min/ace.js"></script>
-	<script src="bower_components/bootstrap-markdown-editor/dist/js/bootstrap-markdown-editor.js"></script>
+	<script src="/bower_components/ace-builds/src-min/ace.js"></script>
+	<script src="/bootstrap-markdown-editor.js"></script>
 
+	<link media="all" type="text/css" rel="stylesheet" href="/css/master.css">
+	<link rel="stylesheet" href="/css/bootstrap-multiselect.css" type="text/css"/>
 	
 	<!-- Google fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+
 	
 	<title>Laravel Blog</title>
 	<script>

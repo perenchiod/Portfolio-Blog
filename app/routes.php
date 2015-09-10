@@ -11,6 +11,15 @@
 |
 */
 
+Route::get('/posts/manage' , 'PostsController@getManage');
+Route::get('/posts/list' , 'PostsController@getList');
+
+// Route::get('getList' , function() {
+// 	$posts = Post::with('user')->get();
+// 	return Reponse::json($posts);
+// 	return View::make('angular');
+// });
+
 Route::resource('posts', 'PostsController');
 
 Route::get('/login' , 'HomeController@showLogin');

@@ -147,8 +147,27 @@ class PostsController extends \BaseController {
 	{
 		$post = Post::find($id);
 		$post->delete();
-		return Redirect::action('PostsController@index');
-	}
+ 		// Modify destroy() to send back JSON if it's been requested
+        if (Request::wantsJson()) {
+            return Response::json(array('Response' , "Good!"));
+        } else {
+            return Redirect::action('PostsController@index');
+        }	
+    }
+
+    //return a view in the posts directory called manage.blade.php
+    public function getManage()
+    {
+    	return View::make('posts/manage');
+    }
+
+    /* query for all the posts in the database and return them as a JSON array
+    	will use Response::json() for this. */
+    public function getList() 
+    {
+    	$posts = Post::with('user')->get();
+		return Response::json($posts);
+    }
 
 
 }
