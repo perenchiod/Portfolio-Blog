@@ -1,5 +1,6 @@
 <?php
 
+use Guzzle\Http\Client;
 class HomeController extends BaseController {
 
 	/*
@@ -49,7 +50,7 @@ class HomeController extends BaseController {
             Session::flash('failedLogin' , 'Incorrect username or password.');
             Log::warning('{{{$username}}} tried to login.');
             return Redirect::action('HomeController@showLogin');
-}
+        }
     }
 
     public function doLogout() 
@@ -57,6 +58,28 @@ class HomeController extends BaseController {
         Auth::logout();
         Session::flash('loggedOut' , 'Successfully logged out.');
         return Redirect::to('/posts');
+    }
+
+    public function sendEmail()
+    {
+        if(!Input::all()) {
+            Session::flash('errorMessage', 'Missing email field');
+            Redirect::back()->withInput();
+        }
+        
+        $data = array(
+            'name' => Input::get('name'),
+            'email' => Input::get('email'),
+            'body'  => Input::get('message'),
+            'subject' => Input::get('subject'),
+        );
+        Mail::send('contact.contact', $data, function($message) {
+            $message->from(Input::get('email'), Input::get('name'));
+            $message->to('perenchiod@gmail.com');
+            $message->subject(Input::get('subject'));
+        });
+        Session::flash('successMessage', 'Your message was sent.');
+        return Redirect::action('HomeController@showWelcome'); 
     }
 
 

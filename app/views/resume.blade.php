@@ -23,9 +23,10 @@
                 <h3 class="list-group-item-heading">About me</h3>
             </a>
             <p class="container">
-                I'm currently a student of <a href="http://codeup.com" target="_blank">CodeUp</a> going through their 
+                I'm a graduated student of <a href="http://codeup.com" target="_blank">CodeUp</a> going through their 
                 Full-Stack Bootcamp. I'm interested in learning as much as I can about web development to be a proficient 
-                coder in both front and backend developing.
+                coder in both front and backend developing. I have come a far way but I still have much to learn, if you have
+                any tips or want to contact me feel free to at perenchiod@gmail.com
             </p>
             <a class="list-group-item inactive-link" href="#">
                 <h3 class="list-group-item-heading">What I've learned</h3>

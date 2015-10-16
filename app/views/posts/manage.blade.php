@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-	<script type="text/javascript" src="/js/blog.js"></script>
+<script type="text/javascript" src="/js/blog.js"></script>
 <div ng-app="blog">
 	<div ng-controller="ManageController as MC">		
 		<div class="table-responsive">

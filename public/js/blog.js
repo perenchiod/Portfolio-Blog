@@ -16,9 +16,10 @@
         $httpProvider.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
     }]);
 
-    app.controller("ManageController", ["$log", "$http", "$scope", function($log, $http, $scope) {
+    app.controller("ManageController", ["$log", "$http", "$scope" function($log, $http, $scope) {
         $scope.posts = [];
         $scope.post = "";
+        
         // An Ajax get request to load some data from the server
         $http.get("/posts/list").then(function(response) {
             $scope.posts = response.data;
@@ -28,6 +29,7 @@
             $log.error("Post response had an error");
             $log.debug(response);
         });
+
         $scope.deletePost = function (index) {
             var id = $scope.posts[index].id;
 

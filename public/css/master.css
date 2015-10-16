@@ -117,3 +117,9 @@ th {
 	float: right;
 	margin-right: 100px;
 }
+
+label {
+	position: absolute;
+	right: 50px;
+	color: rgba(250, 60, 25, 0.70);
+}
