@@ -62,34 +62,31 @@ class HomeController extends BaseController {
 
     public function sendEmail()
     {
-        $validator = Validator::make(Input::all(), Email::$rules);
-        
-        if ($validator->fails()) {
+        if(!Input::all()) {
             Session::flash('errorMessage', 'Missing email field');
             Redirect::back()->withInput();
-        }else{
-        
-            $data = array(
-                'name' => Input::get('name'),
-                'email' => Input::get('email'),
-                'body'  => Input::get('message'),
-                'subject' => Input::get('subject'),
-            );
-            Mail::send('contact.contact', $data, function($message) {
-                $message->from(Input::get('email'), Input::get('name'));
-                $message->to('perenchiod@gmail.com');
-                $message->subject(Input::get('subject'));
-            });
-            Session::flash('successMessage', 'Your message was sent.');
-            return Redirect::action('HomeController@showWelcome'); 
         }
-         return Redirect::action('HomeController@showWelcome'); 
+        
+        $data = array(
+            'name' => Input::get('name'),
+            'email' => Input::get('email'),
+            'body'  => Input::get('message'),
+            'subject' => Input::get('subject'),
+        );
+        Mail::send('contact.contact', $data, function($message) {
+            $message->from(Input::get('email'), Input::get('name'));
+            $message->to('perenchiod@gmail.com');
+            $message->subject(Input::get('subject'));
+        });
+        Session::flash('successMessage', 'Your message was sent.');
+        return Redirect::action('HomeController@showWelcome'); 
     }
 
 
 	public function showWelcome()
     {
         return View::make('portfolio');
+
     }
 
     public function linkResume()
