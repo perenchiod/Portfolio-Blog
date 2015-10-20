@@ -67,7 +67,7 @@ class HomeController extends BaseController {
         if ($validator->fails()) {
             Session::flash('errorMessage', 'Missing email field');
             Redirect::back()->withInput();
-        }
+        }else{
         
         $data = array(
             'name' => Input::get('name'),
