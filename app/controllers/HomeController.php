@@ -62,7 +62,9 @@ class HomeController extends BaseController {
 
     public function sendEmail()
     {
-        if(!Input::all()) {
+        $validator = Validator::make(Input::all(), Email::$rules);
+        
+        if ($validator->fails()) {
             Session::flash('errorMessage', 'Missing email field');
             Redirect::back()->withInput();
         }

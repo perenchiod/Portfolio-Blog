@@ -2,10 +2,13 @@
 @extends('layouts.master')
 <html>
 <head>
-    <title>Dylan's Portfolio</title>
+    @secion('header')
+        <title>Dylan's Portfolio</title>
+    @stop
 </head>
 <body>
 @section('content')
+    <script type="text/javascript" src="/js/portfolio.js"></script>
 <div ng-app="portfolio">
     <!--Junmbotron heading-->
     <section id="portfolioHeader" class="portfolio">

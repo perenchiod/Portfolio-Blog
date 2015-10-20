@@ -98,11 +98,6 @@ th {
   float: right;
   margin-right: 100px; }
 
-label {
-  position: absolute;
-  right: 50px;
-  color: rgba(250, 60, 25, 0.7); }
-
 #portfolioHeader {
   background-image: url("/img/cross_pattern.png"); }
   #portfolioHeader .projects h2 {
@@ -113,6 +108,10 @@ label {
   float: right;
   width: 100%;
   background-image: url("/img/pretty_pentagon.png"); }
+  #contactMe label {
+    position: absolute;
+    right: 50px;
+    color: black; }
 
 #second {
   font-size: 24px; }
@@ -124,6 +123,9 @@ label {
     right: -50px; }
 
 input.ng-touched.ng-invalid {
-  border: 2px dotted red; }
+  background-color: rgba(255, 50, 22, 0.7); }
+
+input.ng-valid {
+  background-color: rgba(50, 255, 22, 0.5); }
 
 /*# sourceMappingURL=style.css.map */

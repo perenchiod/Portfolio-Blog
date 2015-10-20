@@ -1,4 +1,6 @@
 $fontColor: #51B0BD;
+$invalidInput: rgba(255,50,22,.7);
+$validInput: rgba(50,255,22,.5);
 $fancyFont: 'Alegreya', serif;
 
 body {
@@ -121,12 +123,6 @@ th {
 	margin-right: 100px;
 }
 
-label {
-	position: absolute;
-	right: 50px;
-	color: rgba(250, 60, 25, 0.70);
-}
-
 #portfolioHeader {
 	background-image: url("/img/cross_pattern.png");
 
@@ -143,6 +139,12 @@ label {
 	float: right;
 	width: 100%;
 	background-image: url("/img/pretty_pentagon.png");
+
+	label {
+		position: absolute;
+		right: 50px;
+		color: black;
+	}
 }
 
 #second {
@@ -160,6 +162,10 @@ label {
 }
 
 input.ng-touched.ng-invalid {
-	border: 2px dotted red;
+	background-color: $invalidInput;
+}
+
+input.ng-valid {
+	background-color: $validInput;
 }
 
