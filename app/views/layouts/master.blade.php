@@ -19,7 +19,7 @@
 	<script src="/bower_components/ace-builds/src-min/ace.js"></script>
 	<script src="/bootstrap-markdown-editor.js"></script>
 
-	<link media="all" type="text/css" rel="stylesheet" href="/css/master.css">
+	<link media="all" type="text/css" rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/bootstrap-multiselect.css" type="text/css"/>
 	
 	<!-- Google fonts -->

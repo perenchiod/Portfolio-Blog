@@ -1,0 +1,165 @@
+$fontColor: #51B0BD;
+$fancyFont: 'Alegreya', serif;
+
+body {
+	color: $fontColor;
+	font-size: 21px;
+	background-image: url("/img/quilt.png");
+}
+a {
+	color: orange;
+	font-size: 20px;
+	font-family: 'Dosis', sans-serif;
+}
+h1 {
+	font-family: $fancyFont;
+	font-size: 39px;
+}
+
+.blogHeader {
+	text-align: center;
+	font-size: 48px;
+	color: white;
+	margin-left: 200px;
+}
+
+h3 {
+	color: black;
+}
+
+#failedLogin {
+	font-size: 23px;
+	color: black;
+}
+
+.input-append {
+	margin-top: 35px;
+	clear: both;
+}
+.btn-info {
+	right: 40px;
+}
+
+.table-responsive {
+	background-color:rgba(60,255,255,.5);
+	clear: both;
+}
+
+#pagination{
+	margin-left: 40px;
+	color: black;
+	position: absolute;
+	right: 30px;
+	top: 535px;
+}
+
+.left {
+	margin-left: 30%;
+}
+
+.carousel{
+    margin-top: 20px;
+}
+
+.item {
+	bottom: 100px;
+}
+.carousel-content {
+	color: white;
+	bottom: 10px;
+	left: 10px;
+	position: absolute;
+}
+
+#loginForm {
+	position: absolute;
+	margin: -300px 0 0 -300px;
+	left: 50%;
+	top: 50%;
+}
+
+#aboutMePortfolio {
+	color:rgba(250,250,250, .9);	
+}
+
+.glyphicon {
+	color: rgba(60,130,200,.9);
+}
+
+.tableTitle {
+	color: white;
+}
+
+th {
+	font-size: 28px;
+	color: white;
+}
+
+.showDiv {
+	background-color: white;
+}
+
+#edit {
+	float: right;
+}
+
+.glyphicon-knight {
+	float: right;
+	position: absolute;
+}
+
+.editID {
+	font-size: 25px;
+	float: left;
+}
+
+.deleteButton {
+	clear: both;
+}
+#feelsBad {
+	float: right;
+	margin-right: 100px;
+}
+
+label {
+	position: absolute;
+	right: 50px;
+	color: rgba(250, 60, 25, 0.70);
+}
+
+#portfolioHeader {
+	background-image: url("/img/cross_pattern.png");
+
+	//Targeting my project section in my portolio
+	.projects {
+		h2{
+			font-family: $fancyFont;
+			font-size: 50px;
+		}
+	}
+}
+
+#contactMe {
+	float: right;
+	width: 100%;
+	background-image: url("/img/pretty_pentagon.png");
+}
+
+#second {
+	ul{
+		.items{
+			margin-left: 3.5%;
+		}
+		.indent {
+			list-style-type: square;
+			position: relative;
+			right: -50px;
+		}
+	}
+	font-size: 24px;
+}
+
+input.ng-touched.ng-invalid {
+	border: 2px dotted red;
+}
+
