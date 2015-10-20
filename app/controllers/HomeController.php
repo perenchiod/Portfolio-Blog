@@ -83,6 +83,7 @@ class HomeController extends BaseController {
             Session::flash('successMessage', 'Your message was sent.');
             return Redirect::action('HomeController@showWelcome'); 
         }
+         return Redirect::action('HomeController@showWelcome'); 
     }
 
 
