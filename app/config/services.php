@@ -15,7 +15,7 @@ return array(
 	*/
 
 	'mailgun' => array(
-		'domain' => 'dylanswonderland.com',
+		'domain' => 'http://www.dylanswonderland.com',
 		'secret' => 'key-115cc7341e07cc63594238f58dbf8631'
 	),
 
